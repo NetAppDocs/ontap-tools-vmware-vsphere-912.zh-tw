@@ -1,0 +1,43 @@
+---
+permalink: deploy/task_clean_the_vsphere_cached_downloaded_plug_in_packages.html 
+sidebar: sidebar 
+keywords: clean up browser cache 
+summary: 如果在部署或升級ONTAP 完整套工具之後、外掛程式並未自動更新、您應該在瀏覽器和vCenter Server上清理快取的下載外掛程式套件、以解決vCenter Server外掛程式問題。 
+---
+= 清除vSphere快取下載的外掛程式套件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+:firstname: [.lead]
+:author: [.lead]
+:authorinitials: [
+:authors: [.lead]
+:revnumber: 
+:revdate: you should clean up the cached download plug-in packages on the browser and on the vCenter Server to resolve vCenter Server plug-in issues.
+
+
+*步驟*
+
+. 從現有的 vSphere Web 用戶端或 vSphere UI 登出。
+. 移除瀏覽器快取。
+. 移除vSphere Client快取外掛程式套件。對於 VCSA 、請執行下列步驟：
++
+.. SSH加入VCSA應用裝置。
+.. 停止 VMware vSphere Client 服務：
+`service-control --stop vsphere-ui`
+.. 將目錄變更為 vCenter 用戶端 UI 副檔名目錄： `cd /etc/vmware/vsphere-ui/vc-packages/vsphere-client-serenity`
+.. 使用移除 NetApp 特有的快取外掛程式套件 `rm -rf` 命令：
++
+`rm -rf com.netapp.nvpf.webclient-*`
+
++
+`rm -rf com.netapp.vasa.vvol.webclient-*`
+
++
+`rm -rf com.netapp.vsch5-*`
+
+.. 啟動 VMware vSphere Client 服務：
+`service-control --start vsphere-ui`
+
+
+

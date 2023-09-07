@@ -1,0 +1,43 @@
+---
+permalink: deploy/task_enable_vasa_provider_for_configuring_virtual_datastores.html 
+sidebar: sidebar 
+keywords:  
+summary: VMware vSphere的支援功能預設為啟用VASA Provider功能。ONTAP您可以使用每個vVols資料存放區所需的儲存功能設定檔來設定VMware虛擬Volume（vVols）資料存放區。 
+---
+= 啟用VASA Provider以設定虛擬資料存放區
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware vSphere的支援功能預設為啟用VASA Provider功能。ONTAP您可以使用每個vVols資料存放區所需的儲存功能設定檔來設定VMware虛擬磁碟區（vVols）資料存放區。
+
+*您需要的是什麼*
+
+* 您必須設定vCenter Server執行個體並設定ESXi。
+* 您必須已部署ONTAP 各種VMware工具。
+
+
+*關於此工作*
+
+如果VASA Provider功能在升級ONTAP 至9.7.1版的版的版次之前停用、則VASA Provider功能在升級後仍會停用。此版本可讓您為vVols資料存放區啟用vVols複寫功能。
+
+*步驟*
+
+. 登入VMware vSphere的網路使用者介面。
+. 從 vSphere Client 中、選取 * 功能表 * > * NetApp ONTAP tools* 。
+. 按一下 * 設定 * 。
+. 按一下「管理設定」索引標籤中的「*管理功能*」。
+. 在「管理功能」對話方塊中、選取要啟用的VASA Provider副檔名。
+. 如果您要使用vVols資料存放區的複寫功能、請使用*啟用vVols複寫*切換按鈕。
+. 輸入ONTAP 「資訊工具」的IP位址和管理員密碼、然後按一下「*套用*」。
++
+
+NOTE: 如果 VASA Provider 狀態顯示為「離線」、即使已啟用 VASA Provider 擴充功能、請檢查 ``/var/log/vmware/vmware-sps/sps.log` 若 VASA Provider 發生任何連線錯誤、請將檔案歸檔、或重新啟動「 'vmware-spS' 」服務。
+
+
+
+*相關資訊*
+
+https://mysupport.netapp.com/site/global/dashboard["NetApp支援"]

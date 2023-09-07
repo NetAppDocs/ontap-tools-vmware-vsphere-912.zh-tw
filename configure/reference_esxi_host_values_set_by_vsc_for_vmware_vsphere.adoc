@@ -1,0 +1,121 @@
+---
+permalink: configure/reference_esxi_host_values_set_by_vsc_for_vmware_vsphere.html 
+sidebar: sidebar 
+keywords:  
+summary: 您可以使用ONTAP VMware vSphere的VMware VMware vCenter功能、在ESXi主機上設定逾時和其他值、以確保最佳效能和成功的容錯移轉。這些功能是根據NetApp內部測試所設定的價值ONTAP 。 
+---
+= ESXi主機值是使用ONTAP 各種功能介紹工具設定的
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP VMware vSphere的VMware VMware vCenter功能、在ESXi主機上設定逾時和其他值、以確保最佳效能和成功的容錯移轉。這些功能是根據NetApp內部測試所設定的價值ONTAP 。
+
+您可以在ESXi主機上設定下列值：
+
+
+
+== ESXi進階組態
+
+* *《硬體加速器鎖定》*
++
+您應該將此值設為1。
+
+* *《支援的BlockDelete》*
++
+您應該將此值設為 0 。
+
+
+
+
+
+== NFS設定
+
+* * Net.TcpipHeapSiz*
++
+將此值設為 32 。
+
+* * Net.TcpipHeapMax*
++
+將此值設為 1024MB 。
+
+* * NFS.MaxVolumes.*
++
+將此值設為 256 。
+
+* * NFS41.MaxVolumes.*
++
+將此值設為 256 。
+
+* * NFS.MaxQuesteDepet深度*
++
+將此值設為 128 或更高、以避免佇列瓶頸。
+
+* * NFS.HeartbeatMaxFailures *
++
+針對所有 NFS 組態、將此值設為 10 。
+
+* * NFS.HeartbeatFrequency*
++
+針對所有 NFS 組態、將此值設為 12 。
+
+* * NFS.Heartbeattimeout*
++
+針對所有 NFS 組態、將此值設為 5 。
+
+
+
+
+
+== FC/FCoE設定
+
+* *路徑選擇原則*
++
+使用具有 ALUA 的 FC 路徑時、請將此值設為「 RR 」（循環配置資源）。
+
++
+針對所有其他組態、將此值設為「固定」。
+
++
+將此值設為「RR」有助於在所有主動/最佳化路徑之間提供負載平衡。「固定」值用於舊版非ALUA組態、有助於防止Proxy I/O
+
+* *磁碟.QFullSampleSize*
++
+將所有組態的此值設為 32 。設定此值有助於避免I/O錯誤。
+
+* *磁碟QFullTrresh*
++
+將所有組態的此值設為 8 。設定此值有助於避免I/O錯誤。
+
+* * Emulex FC HBA超時*
++
+使用預設值。
+
+* * QLogic FC HBA逾時*
++
+使用預設值。
+
+
+
+
+
+== iSCSI設定
+
+* *路徑選擇原則*
++
+將所有 iSCSI 路徑的此值設為「 RR 」。
+
++
+將此值設為「RR」有助於在所有主動/最佳化路徑之間提供負載平衡。
+
+* *磁碟.QFullSampleSize*
++
+將所有組態的此值設為 32 。設定此值有助於避免I/O錯誤。
+
+* *磁碟QFullTrresh*
++
+將所有組態的此值設為 8 。設定此值有助於避免I/O錯誤。
+
+

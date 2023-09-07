@@ -1,0 +1,34 @@
+---
+permalink: manage/task_collect_the_log_files.html 
+sidebar: sidebar 
+keywords:  
+summary: 您可以從 ONTAP 工具圖形化使用者介面（ GUI ）中提供的選項、收集適用於 VMware vSphere 的 ONTAP ® 工具記錄檔。技術支援可能會要求您收集記錄檔、以協助疑難排解問題。 
+---
+= 收集記錄檔
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從 ONTAP 工具圖形化使用者介面（ GUI ）中提供的選項、收集適用於 VMware vSphere 的 ONTAP 工具記錄檔。技術支援可能會要求您收集記錄檔、以協助疑難排解問題。
+
+*關於此工作*
+
+如果您需要VASA Provider記錄檔、可以從「廠商供應商供應商控制台」畫面產生支援服務包。此頁面是VASA Provider維護功能表的一部分、可從虛擬應用裝置的主控台存取。
+
+`\https://vm_ip:9083`
+
+您可以使用 ONTAP 工具 GUI 中的「 VMware vSphere 記錄匯出 ONTAP 工具」功能、來收集 VMware vSphere 記錄檔的 ONTAP 工具。當您為啟用 VASA Provider 的 VMware vSphere 記錄套件收集 ONTAP 工具時、適用於 VMware vSphere 記錄套件的 ONTAP 工具也會有 VP 記錄。下列步驟說明如何收集 VMware vSphere 記錄檔的 ONTAP 工具：
+
+*步驟*
+
+. 從 ONTAP 工具首頁、按一下 * 組態 * > * 匯出 ONTAP 工具以取得 VMware vSphere 記錄 * 。
++
+此作業可能需要數分鐘的時間。
+
+. 出現提示時、請將檔案儲存至本機電腦。
++
+然後、您可以將_.Zip檔案傳送給技術支援部門。
+
+

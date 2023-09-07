@@ -1,0 +1,51 @@
+---
+permalink: configure/task_refresh_the_storage_system_display.html 
+sidebar: sidebar 
+keywords:  
+summary: 您可以使用適用於 VMware vSphere 的 ONTAP ® 工具所提供的更新功能、來重新整理儲存系統的相關資訊、並強制 ONTAP 工具探索儲存系統。 
+---
+= 重新整理儲存系統顯示器
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用適用於 VMware vSphere 的 ONTAP ® 工具所提供的更新功能、來重新整理儲存系統的相關資訊、並強制 ONTAP 工具探索儲存系統。
+
+*關於此工作*
+
+。 `refresh` 如果您在收到驗證錯誤後變更儲存系統的預設認證、則此選項很有用。如果您在儲存系統報告後變更儲存系統認證、則應該一律執行更新作業 `Authentication Failure Status`。在更新作業期間、 ONTAP 工具會嘗試使用新認證連線至儲存系統。
+
+視系統設定而定、此工作可能需要很長時間才能完成。
+
+*步驟*
+
+. 在 VMware vSphere Client 首頁上、按一下 * Storage* 。
+. 開始更新：
++
+|===
+
+
+| *如果此位置是...* | *按一下...* 
+
+
+ a| 
+虛擬儲存主控台
+ a| 
+「*重新探索全部*」圖示。
+
+
+
+ a| 
+資料中心
+ a| 
+在資料中心上按一下滑鼠右鍵、然後按一下 * NetApp ONTAP tools* > * 更新主機與儲存資料 * 。
+
+|===
+. 在「更新主機與儲存資料」對話方塊中、按一下「*確定*」。
++
+視資料中心的主機和儲存系統數量而定、探索可能需要幾分鐘的時間。此探索作業可在背景中運作。
+
+. 在「成功」對話方塊中按一下「*確定*」。
+
