@@ -157,7 +157,6 @@
   <block id="caeb76e03a32069563fffdb32d55954a" category="admonition">在Site Recovery Manager（SRM）中、資源可以是資源集區、ESXi主機或vSphere叢集。</block>
   <block id="8ac32f6a8aa36578bdfe17eaa1b09d09" category="list-text">登入vCenter Server、然後按一下*站台恢復*&gt;*站台*。</block>
   <block id="881a8180069b4ef6ce578dc05747c26c" category="list-text">在Manage（管理）選項卡中，選擇* Resource Mappings（資源映射）*。</block>
-  <block id="3a51cbdda8b1a9e5c79cbbe920b9311d" category="list-text">按一下 <block ref="40f23597e3247b9bac7d35bb74d1ef6a" category="inline-image-macro-rx" type="image"></block> 圖示以建立新的資源對應。</block>
   <block id="ca61b18f56707ba483d313f4fd42d21b" category="paragraph">此時會出現「建立資源對應」精靈。</block>
   <block id="20586b09df186411bee0e3968b2ef2dd" category="list-text">在Create Resource Mapping精靈 中、執行下列步驟：</block>
   <block id="32a6b23557bb5ddc3323c7e77b4b97a4" category="list-text">選擇*自動準備名稱相符的資源對應*、然後按*下一步*。</block>
@@ -738,7 +737,6 @@ VP 稽核記錄可在檔案 _/opt/NetApp/vpserver/conf/log4j2.properties_ 中修
   <block id="b6b2c55f92e8e04471c740483e69a795" category="paragraph">您可以增加或減少NFS資料存放區的大小、但對於VMFS資料存放區、您只能增加大小。使用「自動擴充和縮減」選項的不支援資料存放區調整大小FlexGroup 。作為VVols資料存放區一部分的傳統資料存放區和流通量的一部分、無法縮減至現有大小以下、但最多可增加120%。FlexGroup FlexVol在FlexGroup 這些功能區和FlexVol 功能區上啟用預設快照。</block>
   <block id="1b837800f24f729eb8e73a102257c0bd" category="admonition">如果您使用ASA All SAN Array（更新版本）類型的儲存平台ONTAP 搭配使用、則只能建立vmdk大小大於16TB的vVols資料存放區。</block>
   <block id="0e6fc56cbe91d72cb03e33a904ae9ab3" category="list-text">在導覽窗格中、選取包含資料存放區的資料中心。</block>
-  <block id="a15d1bf5dee929fddbf2e03ae0f830e9" category="list-text">在資料存放區上按一下滑鼠右鍵、然後選取「* NetApp ONTAP S庫 工具*&gt;*指派QoS*」。</block>
   <block id="425e99780c82b74f333dd7da3068f492" category="list-text">在「調整大小」對話方塊中、指定資料存放區的新大小、然後按一下「*確定*」。</block>
   <block id="29b33d6a4971ded7e90ffb22fa8e685d" category="paragraph">您可以執行「Storage Systems（儲存系統）」功能表中的「*重新探索全部*」選項、手動更新「Storage Systems and Dashboard（儲存系統和儀表板）」下的儲存清單、或等待下次排程的重新整理。</block>
   <block id="37cb7cba8a11cb5f31e25fa717c59190" category="summary">您可以編輯現有的VMware虛擬磁碟區（vVols）資料存放區、以變更預設的儲存功能設定檔。預設的儲存功能設定檔主要用於交換vVols。</block>
@@ -2136,7 +2134,6 @@ openssl x509 -in OTV_ISO_CERT.pem -publkey -noout &gt; CSC-prod-OTV-SRA-Tgs.pub<
   <block id="bbf1057ad175e1e1664e224351019ac9" category="sidebar">NetApp匯入公用程式-影片</block>
   <block id="72393f9ef0b6b69526a30ac7ce5276bc" category="sidebar">NetApp社群ONTAP -功能強大的工具</block>
   <block id="a80f3275e655b331da24a4073b9c6ed4" category="sidebar">適用於 VMware vSphere 9.12 文件的 ONTAP 工具</block>
-  <block id="ed9018b2e8611a3d2c03bb6a205b9715" category="sidebar">VMware vSphere適用的工具ONTAP</block>
   <block id="f724dfae8a2bb3b34e049dcedf88d10d" category="sidebar">保護資料存放區和虛擬機器</block>
   <block id="754290325c2ec09a93b1e1ede0871001" category="sidebar">啟用儲存複寫介面卡來保護資料存放區</block>
   <block id="30dcbadaeab2008f15a279a602f8b6e2" category="sidebar">設定儲存系統以進行災難恢復</block>
@@ -2170,4 +2167,7 @@ openssl x509 -in OTV_ISO_CERT.pem -publkey -noout &gt; CSC-prod-OTV-SRA-Tgs.pub<
   <block id="f98484fc38c578aca640fd781e7196ae" category="sidebar">設定資料存放區</block>
   <block id="13b48cbdd252f4608b35c2d647aacc28" category="sidebar">部署及升級ONTAP 功能</block>
   <block id="578d9149fa04c3d4f2229ad419fbfec3" category="sidebar">部署ONTAP 這些功能的需求</block>
+  <block id="c482036287311326fe268e793e8592b0" category="inline-image-macro">新的資源對應</block>
+  <block id="3f8ca314615f7ceccc4e80b9ecdd18e7" category="list-text">按一下 <block ref="b0cd4e998161741b4ab585ccd5066812" category="inline-image-macro-rx" type="image"></block> 圖示以建立新的資源對應。</block>
+  <block id="bdc5a4ba1115f3f724e1f81e7f41eeef" category="list-text">在資料存放區上按一下滑鼠右鍵、然後選取 * NetApp ONTAP tools* &gt; * Resize non-vVols datastore* 。</block>
 </blocks>
