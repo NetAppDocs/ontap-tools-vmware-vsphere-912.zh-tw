@@ -2170,4 +2170,10 @@ openssl x509 -in OTV_ISO_CERT.pem -publkey -noout &gt; CSC-prod-OTV-SRA-Tgs.pub<
   <block id="c482036287311326fe268e793e8592b0" category="inline-image-macro">新的資源對應</block>
   <block id="3f8ca314615f7ceccc4e80b9ecdd18e7" category="list-text">按一下 <block ref="b0cd4e998161741b4ab585ccd5066812" category="inline-image-macro-rx" type="image"></block> 圖示以建立新的資源對應。</block>
   <block id="bdc5a4ba1115f3f724e1f81e7f41eeef" category="list-text">在資料存放區上按一下滑鼠右鍵、然後選取 * NetApp ONTAP tools* &gt; * Resize non-vVols datastore* 。</block>
+  <block id="2d7ee85ca6eba61e2ebc56fcd9749a22" category="section-title">內部組態與SRA MetroCluster</block>
+  <block id="700f785cc3b0c94782ea099d30974628" category="paragraph">儲存複寫介面卡（ SRA ）支援使用 MetroCluster 組態（ MCC ）搭配 NFS 、 iSCSI 和 FCP 傳輸協定的環境。</block>
+  <block id="b0cf503432f798961e23d246f3541857" category="paragraph">所有儲存虛擬機器（ SVM ）名稱在 MCC 叢集上都應是唯一的、這是 MCC SRA 組態的先決條件。如果名稱不是唯一的、則會造成衝突、且 SRA 工作流程會失敗。</block>
+  <block id="a3a5ab624299236efd1aa00751d3e9d9" category="paragraph">必要行動：</block>
+  <block id="9a5bef2e6baedf8812a9649b615baf1a" category="list-text">在執行 MCC 切換或切換後、請確定來源叢集上的 _SnapMirror list-destinations_ 命令會顯示正確的輸出、並顯示新的 SVM 名稱（ &lt;vserver_name&gt; - MC ）。命令可能需要 30 分鐘才能執行。</block>
+  <block id="44a62aa72367cca25b9e3f92da55ace0" category="list-text">在繼續進行其他的 SRA 工作流程之前、請先從 SRM UI 執行「探索裝置」作業。此作業可確保 SRM 在切換或切換後、能夠察覺 SVM 名稱的變更。</block>
 </blocks>
